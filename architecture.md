@@ -1,7 +1,6 @@
 # Architecture diagrams for GSoC 2026 — BRL-CAD Python Bindings
-# Paste into https://mermaid.live/ → Export PNG/SVG → save under images/
 
-## 1) Implemented stack (matches MOOSE + your README)
+## 1) Implemented stack 
 
 This is the architecture **as shipped** in
 [BRL-CAD/MOOSE](https://github.com/BRL-CAD/MOOSE) and
@@ -9,8 +8,8 @@ This is the architecture **as shipped** in
 
 ```mermaid
 flowchart TB
-    subgraph USER["Your Python code"]
-        APP["Application / scripts / tests"]
+    subgraph USER["Python code"]
+        APP["scripts / tests"]
     end
 
     subgraph PY["Python package — brlcad/"]
@@ -116,11 +115,3 @@ flowchart LR
     G --> R1 --> R2
     G --> R3
 ```
-
-## How to export a PNG for the report
-
-1. Open https://mermaid.live/
-2. Paste **diagram 1** (recommended for the final report — it matches what you actually shipped)
-3. Actions → Export PNG (or SVG)
-4. Save as:
-   `images/architecture-moose-stack.png`

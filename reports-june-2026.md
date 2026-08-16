@@ -3,8 +3,8 @@
 **Project:** BRL-CAD Python Bindings (GSoC 2026)  
 **Contributor:** Abdullah Waleed Ahmed  
 **Mentor:** Daniel Rossberg  
-
-Weekdays only.
+#### Note:
+All of these PRs were tested in my Python Bindings project repository who's link was provided in the final report and the final result was demonstrated when I added the src/Python folder to the MOOSE repository.
 
 ---
 

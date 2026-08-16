@@ -3,46 +3,20 @@
 **Project:** BRL-CAD Python Bindings (GSoC 2026)  
 **Contributor:** Abdullah Waleed Ahmed  
 **Mentor:** Daniel Rossberg  
-
-Weekdays only. Early May covers community bonding and onboarding; merged pull-request work begins mid-month.
+#### Note:
+Early May covers community bonding and onboarding; merged pull-request work begins mid-month.
+All of these PRs were tested in my Python Bindings project repository who's link was provided in the final report and the final result was demonstrated when I added the src/Python folder to the MOOSE repository.
 
 ---
 
-### Friday, 1 May 2026
-Reviewed the accepted GSoC proposal and mapped deliverables to MOOSE’s existing C and C++ layout. Skimmed prior BRL-CAD Python experiments and noted ABI risk of binding C++ directly.
-
-### Monday, 4 May 2026
-Cloned and built MOOSE locally; confirmed `libbrlcad.so` link and include paths. Walked `include/brlcad/C/` versus `src/Database/` to understand the intended bridge boundary.
-
-### Tuesday, 5 May 2026
-Studied Handle / ConstDatabase ownership patterns. Listed gaps between C++ `Database::Add` style APIs and what the C headers currently expose.
-
-### Wednesday, 6 May 2026
-Read mentor guidance and Zulip / review norms for BRL-CAD. Drafted a phased plan: casting correctness → naming APIs → core primitives → CSG → Python package.
-
-### Thursday, 7 May 2026
-Traced how FileDatabase and MemoryDatabase relate to ConstDatabase in C++. Reproduced a small failing cast scenario that would block Python wrappers.
-
-### Friday, 8 May 2026
-Wrote notes on magic-token validation in `casts.cpp`. Prepared a minimal reproduction and patch outline for expanding `CastConstDatabase`.
-
-### Monday, 11 May 2026
-Set up a clean ctypes smoke harness against the built shared library. Documented which symbols resolve today versus which still need C wrappers.
-
-### Tuesday, 12 May 2026
-Compared Arb8 C++ constructors with what a flat C API would need (RPP form, point lists). Sketched `arb8.h` function names to match MOOSE style.
-
-### Wednesday, 13 May 2026
-Reviewed Object attribute and name APIs on the C++ side. Identified `SetName` / database `SetTitle` as early prerequisites for readable `.g` inspection in MGED.
-
-### Thursday, 14 May 2026
-Community bonding wrap-up: synced schedule with mentor expectations for May merges. Prioritized casting fix as the first upstream PR.
+### Friday, 1 May 2026 – Thursday, 14 May 2026
+**Exam Leave & Mentor Initial Design:** On exam leave during this period, maintaining communication with the mentor. During this time, the mentor laid the foundation for the C bridge, creating the first design of `src/C` with `constDatabase.cpp` and setting up the magic-token validation system.
 
 ### Friday, 15 May 2026
-Polished the casting patch locally; ran targeted checks that FileDatabase and MemoryDatabase handles validate. Prepared PR description and test notes.
+Returned from exam leave and officially started work. Reviewed the accepted GSoC proposal and studied the mentor's newly created `src/C` bridge design. Set up the local build, confirmed link paths, and began investigating the magic-token validation in `casts.cpp`.
 
 ### Monday, 18 May 2026
-Final review of casting changes against `Handle.h` and database sources. Opened preparation for submitting PR #7.
+Traced how `FileDatabase` and `MemoryDatabase` relate to `ConstDatabase` in C++. Reproduced a failing cast scenario that would block Python wrappers and prepared the patch for expanding `CastConstDatabase`.
 
 ### Tuesday, 19 May 2026
 **Opened [PR #7](https://github.com/BRL-CAD/MOOSE/pull/7)** — expand `CastConstDatabase` to accept FileDatabase and MemoryDatabase handles. Addressed incomplete magic-token validation that returned `nullptr` for writable database variants.

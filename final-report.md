@@ -18,7 +18,7 @@
 
 ## Abstract
 
-This project delivers a practical Python path into BRL-CAD through the MOOSE interface layer. Instead of binding the C++ ABI directly, the work establishes a stable C bridge (`libbrlcad.so`), then a handcrafted `ctypes` adapter and typed Python wrappers. The result is a clearer modeling workflow—create primitives, compose CSG combinations, manage database modes, and inspect geometry—while preserving BRL-CAD semantics and remaining easy for mentors and maintainers to review incrementally.
+This project delivers a practical Python path into BRL-CAD through the MOOSE interface layer. Instead of binding the C++ ABI directly, the work establishes a stable C bridge (`libbrlcad.so`), then a handcrafted `ctypes` adapter and typed Python wrappers. The result is a clearer modeling workflow, create primitives, compose CSG combinations, manage database modes, and inspect geometry while preserving BRL-CAD semantics and remaining easy for mentors and maintainers to review incrementally.
 
 ---
 
@@ -44,6 +44,28 @@ BRL-CAD’s strength has historically lived behind C and C++ APIs. Python users 
 - Prefer a **thin C bridge** over direct pybind11 / SWIG for this cycle.
 - Keep **one operation ≈ one MOOSE call ≈ one `.g` representation**.
 - Grow the API **pull request by pull request** under mentor review.
+
+---
+
+## Work completed and remaining
+
+### Completed
+
+The MOOSE C bridge is mapped into Python for the surfaces needed to model and inspect geometry from scripts: **databases**, **primitives**, **combinations**, **VectorList**, and related object helpers. The layering is concrete and reviewable—**`ctypes` bindings** in `_bindings.py` plus **object-oriented wrappers** in `brlcad/`—and was landed upstream through thirteen merged pull requests on [BRL-CAD/MOOSE](https://github.com/BRL-CAD/MOOSE), with ongoing development mirrored at [brlcad-python-bindings](https://github.com/AWaleed-Ahmed/brlcad-python-bindings).
+
+In addition, key production-readiness milestones have been completed:
+- **Installation & packaging** — CMake and `pip` installation cleanly ship every module, and `libbrlcad` is discoverable without manual `LD_LIBRARY_PATH` workarounds.
+- **End-to-end workflows** — Verified **create → add → save `.g` → load / inspect** from Python as a first-class, documented path (including exposing previously missing write/`Add` bridge pieces).
+- **Testing & CI** — Automated smoke tests ensure that installs and symbol drift cannot fail silently.
+- **Version alignment** — The Python package versioning is strictly aligned with MOOSE.
+
+In short: the binding *contract* (C ABI → ctypes → OO API) and a broad primitive/CSG surface are in place, usable for development, fully tested, and easily installable.
+
+### Remaining
+
+The bindings are functionally complete and structurally sound. The final piece of intentional follow-on work is focused on user onboarding:
+
+1. **Documentation** — A short getting-started guide plus a few tutorials (hello sphere, CSG combination, open an existing `.g`).
 
 ---
 
@@ -115,7 +137,7 @@ Implemented Bag of Triangles support, then merged the first full Python bindings
 
 ### August — Coverage, polish, and submission
 
-Completed Unknown, VectorList, Sketch, ParabolicCylinder, and Pipe ([PR #18](https://github.com/BRL-CAD/MOOSE/pull/18)), tightened wrappers, prepared demo geometry for MGED screenshots, and assembled this final submission package.
+Completed Unknown, VectorList, Sketch, ParabolicCylinder, and Pipe ([PR #18](https://github.com/BRL-CAD/MOOSE/pull/18)), fixed remaining VectorList and Sketch issues while introducing Python wheel support for `pip` installation ([PR #19](https://github.com/BRL-CAD/MOOSE/pull/19)), tightened wrappers, prepared demo geometry for MGED screenshots, and assembled this final submission package.
 
 ---
 
@@ -197,6 +219,12 @@ Added Unknown, VectorList, Sketch, ParabolicCylinder, and Pipe across C headers/
 
 ---
 
+### [#19 — Python Wheel](https://github.com/BRL-CAD/MOOSE/pull/19) · unmerged 2026-08-16
+
+Introduced Python wheel support to allow for standard `pip` installation of the bindings. This pull request also included crucial fixes for `VectorList` and `Sketch` to ensure their proper functioning.
+
+---
+
 ## Milestones (high level)
 
 | Window | Milestone |
@@ -206,7 +234,7 @@ Added Unknown, VectorList, Sketch, ParabolicCylinder, and Pipe across C headers/
 | Jun 18–28 | Object/Arb8 completion; Combinations |
 | Jul 6–22 | BoT; Python package landed in MOOSE |
 | Jul 23–Aug 1 | Torus family; Particle / Paraboloid / Hyperboloid / Halfspace |
-| Aug 7–10 | Sketch / Pipe / VectorList / Unknown; demo + final report |
+| Aug 7–16 | Sketch / Pipe / VectorList / Unknown; Python wheel; demo + final report |
 
 ---
 
@@ -216,7 +244,7 @@ I am grateful to Google Summer of Code and to the BRL-CAD community for the chan
 
 Special thanks to my mentor **Daniel Rossberg** for patient reviews, design guidance, and insisting that the C bridge stay honest to MOOSE semantics. Those comments shaped both the code and how I think about maintainable bindings.
 
-On a personal note: this summer stretched my systems skills—C ABI boundaries, ctypes ownership, CSG structure, and the discipline of upstream review. The project was demanding, and I am proud of the steady sequence of merges from the first casting fix to a usable Python surface on MOOSE. I look forward to staying involved with BRL-CAD beyond GSoC.
+On a personal note: this summer stretched my systems skills like C ABI boundaries, ctypes ownership, CSG structure, and the discipline of upstream review. The project was demanding, and I am proud of the steady sequence of merges from the first casting fix to a usable Python surface on MOOSE. I look forward to staying involved with BRL-CAD beyond GSoC.
 
 ---
 

@@ -3,8 +3,8 @@
 **Project:** BRL-CAD Python Bindings (GSoC 2026)  
 **Contributor:** Abdullah Waleed Ahmed  
 **Mentor:** Daniel Rossberg  
-
-Weekdays only.
+#### Note:
+All of these PRs were tested in my Python Bindings project repository who's link was provided in the final report and the final result was demonstrated when I added the src/Python folder to the MOOSE repository.
 
 ---
 
@@ -27,31 +27,31 @@ Responded to mentor review on #14. Clarified ownership expectations for faces an
 Continued #14 revisions; improved consistency with other primitive C modules. Rebuilt and retested.
 
 ### Thursday, 9 July 2026
-Drafted Python package structure (`Handle`, `Object`, `_bindings.py`, databases, core primitives) in the development repository.
+Drafted the Python package structure (`Handle`, `Object`, `_bindings.py`, databases, core primitives) in the development repository to prepare them for the eventual PR.
 
 ### Friday, 10 July 2026
-Implemented Python `Handle` lifetime helpers and Object name/attribute methods via ctypes. Mirrored C API names closely for maintainability.
+Prepared the Python `Handle` lifetime helpers and Object name/attribute methods via ctypes in the development repo, mirroring C API names closely for maintainability.
 
 ### Monday, 13 July 2026
-Added Python `ConstDatabase` / `FileDatabase` / `MemoryDatabase` facades and Load/Title paths. Wired factory routing in `Get()` for typed returns.
+Prepared the Python `ConstDatabase` / `FileDatabase` / `MemoryDatabase` facades and Load/Title paths. Developed factory routing in `Get()` for typed returns.
 
 ### Tuesday, 14 July 2026
-Wrapped Sphere, Arb8, Cone, Ellipsoid, Combinations, and VectorList in Python. Wrote initial usage notes under `brlcad/docs/`.
+Prepared the Python wrappers for Sphere, Arb8, Cone, Ellipsoid, Combinations, and VectorList. Drafted initial usage notes under `brlcad/docs/` for the upcoming PR.
 
 ### Wednesday, 15 July 2026
-Added Python tests (`test_get_title`, `test_generate_data` patterns) and CMake hooks for installing/testing the package inside MOOSE.
+Prepared the Python tests (`test_get_title`, `test_generate_data` patterns) and CMake hooks, ensuring they were ready for installing/testing the package once merged into MOOSE.
 
 ### Thursday, 16 July 2026
-Continued BoT PR follow-ups in parallel with Python packaging polish (exports, `__init__.py`, path notes for `LD_LIBRARY_PATH`).
+Continued BoT PR follow-ups in parallel with polishing the Python packaging (exports, `__init__.py`, path notes for `LD_LIBRARY_PATH`) in preparation for the PR.
 
 ### Friday, 17 July 2026
-Final checklist for BoT merge and for moving Python tree into a MOOSE PR. Synced development repo https://github.com/AWaleed-Ahmed/brlcad-python-bindings.
+Completed the final checklist for the BoT merge. Ensured all Python binding files were available in the development repo (https://github.com/AWaleed-Ahmed/brlcad-python-bindings) for being merged into MOOSE.
 
 ### Monday, 20 July 2026
-**[PR #14](https://github.com/BRL-CAD/MOOSE/pull/14) merged (18 July).** Prepared Python bindings PR against MOOSE `src/Python/`.
+**[PR #14](https://github.com/BRL-CAD/MOOSE/pull/14) merged (18 July).** Finalized preparations for the Python bindings PR against MOOSE `src/Python/`.
 
 ### Tuesday, 21 July 2026
-**Opened [PR #15](https://github.com/BRL-CAD/MOOSE/pull/15)** — Python Bindings. Large additive change: wrappers, bindings, docs snippet, and tests.
+**Opened [PR #15](https://github.com/BRL-CAD/MOOSE/pull/15)** — Python Bindings. Made the complete set of prepared wrappers, bindings, docs, and tests available for merging into MOOSE.
 
 ### Wednesday, 22 July 2026
 **[PR #15](https://github.com/BRL-CAD/MOOSE/pull/15) merged.** Began Torus / EllipticalTorus / HyperbolicCylinder C + Python follow-on work.

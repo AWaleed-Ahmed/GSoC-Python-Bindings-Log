@@ -17,6 +17,15 @@ This repository hosts the progress logs and final submission report for the Goog
 > **Overview**  
 > The goal of this project is to give BRL-CAD a reliable, pythonic modeling path without redesigning the core engine. Work spans a stable C ABI on top of MOOSE, typed Python wrappers via `ctypes`, and broad primitive / CSG coverage so users can create, inspect, and combine geometry from Python and verify results in MGED.
 
+### Status at a glance
+
+| | |
+|---|---|
+| **Completed** | Mapped the MOOSE C bridge into Python (databases, primitives, combinations, VectorList, and related helpers) with `ctypes` bindings and OO wrappers — twelve PRs merged to MOOSE. |
+| **Remaining** | Production readiness: packaging/`libbrlcad` discovery, end-to-end create→add→save→load, docs/tutorials, CI smoke tests, and PyPI / install-tree distribution aligned with MOOSE. |
+
+Full detail: [Work completed and remaining](final-report.md#work-completed-and-remaining) in the final report.
+
 ---
 
 ## Key links

@@ -4,7 +4,7 @@
 **Contributor:** Abdullah Waleed Ahmed  
 **Mentor:** Daniel Rossberg  
 
-Weekdays only. Entries after the last upstream merge focus on polish, demonstration geometry, and the final submission report.
+Entries after the last upstream merge focus on polish, demonstration geometry, and the final submission report.
 
 ---
 
@@ -24,52 +24,22 @@ Wrote Python wrappers for the new types and updated `_bindings.py` / `__init__.p
 **Opened [PR #18](https://github.com/BRL-CAD/MOOSE/pull/18)** — Unknown, VectorList, Sketch, ParabolicCylinder, Pipe (C + Python).
 
 ### Monday, 10 August 2026
-**[PR #18](https://github.com/BRL-CAD/MOOSE/pull/18) merged (9 August).** Built a demo `.g` scene (sphere + box + torus as `scene.r`), opened it in MGED for wireframe screenshots, and began assembling the GSoC final report package (README, final report, May–August logs, architecture Mermaid, demo script).
+**[PR #18](https://github.com/BRL-CAD/MOOSE/pull/18) merged (9 August).** Investigated remaining issues with `VectorList` and `Sketch` and began setting up infrastructure for building a Python wheel.
 
 ### Tuesday, 11 August 2026
-Expanded the final report’s PR narratives and architecture explanation. Cross-checked every merge link against BRL-CAD/MOOSE and the development repository.
+Fixed `VectorList` and `Sketch` bugs. Implemented Python wheel support to allow for standard `pip` installation of the bindings, resolving path discovery issues.
 
 ### Wednesday, 12 August 2026
-Polished daily logs for consistency of tone and dates. Ensured weekend days remain omitted and that each weekday maps to bonding, implementation, review, or documentation work.
+Tested the wheel build locally. Verified that the packaging correctly shipped the modules and that `libbrlcad` could be discovered without manual `LD_LIBRARY_PATH` workarounds.
 
 ### Thursday, 13 August 2026
-Refined Mermaid architecture diagrams for export into `images/`. Aligned diagram wording with the shipped stack (`_bindings.py` → `libbrlcad.so` → MOOSE → BRL-CAD).
+**Opened [PR #19](https://github.com/BRL-CAD/MOOSE/pull/19)** for Python Wheel support and fixes. Began assembling the GSoC final report package (README, final report, architecture Mermaid, demo script).
 
 ### Friday, 14 August 2026
-Proofread README and final report for formal presentation. Verified image paths (`mged-wireframe.png`, icons, proposal architecture archives).
+Expanded the final report’s PR narratives to include PR #19. Refined architecture diagrams and ensured the final report reflects the completed production-readiness goals like packaging and testing.
 
 ### Monday, 17 August 2026
-Prepared submission checklist: proposal reference, mentor name, all twelve PR URLs, demo script instructions, and repository links.
-
-### Tuesday, 18 August 2026
-Re-read mentor-facing sections (abstract, scope, acknowledgements). Adjusted personal note to stay professional while reflecting the summer’s learning curve.
-
-### Wednesday, 19 August 2026
-Optional cleanup pass on development-repo docs so they match MOOSE `src/Python/` naming and install guidance (`LD_LIBRARY_PATH`, wheel build notes).
-
-### Thursday, 20 August 2026
-Final consistency check across README tables and monthly summaries. Confirmed no open/unmerged PR claims remain in the submission text.
-
-### Friday, 21 August 2026
-Packaged the report folder for GSoC final submission upload / linking. Spot-checked that MGED demo database and screenshot are present under `images/`.
-
-### Monday, 24 August 2026
-Light follow-up: noted future-work ideas (exposing `Database::Add` through the C API, keeping `_bindings.py` in lockstep with `libbrlcad.so`) without claiming them as delivered.
-
-### Tuesday, 25 August 2026
-Archived local build notes used during the summer for personal reference; kept the public report focused on merged work and verifiable demos.
-
-### Wednesday, 26 August 2026
-Revisited Combination and primitive examples for any README quick-start improvements in the development repository.
-
-### Thursday, 27 August 2026
-Final editorial pass on August log and cross-links from the final report back to monthly files.
-
-### Friday, 28 August 2026
-Submission readiness confirmation: four monthly logs, final report, README, images, scripts, and architecture sources complete.
-
-### Monday, 31 August 2026
-Closed the coding-period log. Remaining evaluation window reserved for mentor/GSoC process; project artifacts remain in this folder and on GitHub.
+**[PR #19](https://github.com/BRL-CAD/MOOSE/pull/19) unmerged (16 August).** Prepared the final submission checklist: proposal reference, mentor name, all thirteen PR URLs, demo script instructions, and repository links. Closed the coding-period log.
 
 ---
 
@@ -79,5 +49,14 @@ Closed the coding-period log. Remaining evaluation window reserved for mentor/GS
 |------|--------|
 | [PR #17](https://github.com/BRL-CAD/MOOSE/pull/17) Particle family | Merged 1 August |
 | [PR #18](https://github.com/BRL-CAD/MOOSE/pull/18) Sketch / Pipe / VectorList / Unknown / ParabolicCylinder | Merged 9 August |
+| [PR #19](https://github.com/BRL-CAD/MOOSE/pull/19) Python Wheel & VectorList/Sketch fixes | Merged 16 August |
 | MGED demo screenshot | Captured (`images/mged-wireframe.png`) |
 | Final submission documents | README · final-report · May–August logs |
+
+### Completed vs remaining (carry-forward)
+
+**Completed:** MOOSE C bridge mapped into Python (databases, primitives, combinations, VectorList, etc.) with `ctypes` bindings and OO wrappers. Packaging, testing, end-to-end workflows, and version alignment are also fully implemented.
+
+**Remaining:** Documentation (getting-started guide and tutorials).
+
+See the final report section [Work completed and remaining](final-report.md#work-completed-and-remaining).
