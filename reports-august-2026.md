@@ -49,7 +49,7 @@ Expanded the final report’s PR narratives to include PR #19. Refined architect
 |------|--------|
 | [PR #17](https://github.com/BRL-CAD/MOOSE/pull/17) Particle family | Merged 1 August |
 | [PR #18](https://github.com/BRL-CAD/MOOSE/pull/18) Sketch / Pipe / VectorList / Unknown / ParabolicCylinder | Merged 9 August |
-| [PR #19](https://github.com/BRL-CAD/MOOSE/pull/19) Python Wheel & VectorList/Sketch fixes | Merged 16 August |
+| [PR #19](https://github.com/BRL-CAD/MOOSE/pull/19) Python Wheel & VectorList/Sketch fixes | Unmerged 18 August |
 | MGED demo screenshot | Captured (`images/mged-wireframe.png`) |
 | Final submission documents | README · final-report · May–August logs |
 

@@ -35,7 +35,7 @@ Full detail: [Work completed and remaining](final-report.md#work-completed-and-r
 | Upstream MOOSE | https://github.com/BRL-CAD/MOOSE |
 | Development repository | https://github.com/AWaleed-Ahmed/brlcad-python-bindings |
 | Contributor GitHub | https://github.com/AWaleed-Ahmed |
-| Proposal | `Python Binding.pdf` |
+| Proposal | [Python-Binding.pdf](Python-Binding.pdf) |
 | Organization | https://brlcad.org/ |
 
 ---
@@ -84,6 +84,7 @@ All contributions were submitted to **[BRL-CAD/MOOSE](https://github.com/BRL-CAD
 | [#16](https://github.com/BRL-CAD/MOOSE/pull/16) | Torus, EllipticalTorus, HyperbolicCylinder | 2026-07-26 |
 | [#17](https://github.com/BRL-CAD/MOOSE/pull/17) | Particle, Paraboloid, Hyperboloid, Halfspace | 2026-08-01 |
 | [#18](https://github.com/BRL-CAD/MOOSE/pull/18) | Unknown, VectorList, Sketch, ParabolicCylinder, Pipe | 2026-08-09 |
+| [#19](https://github.com/BRL-CAD/MOOSE/pull/19) | Python Wheel & VectorList/Sketch fixes | Unmerged (18 August) |
 
 ---
 
